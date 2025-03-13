@@ -6,7 +6,7 @@ body {
     color: #222;
     padding: 1rem;
     margin: 0;
-    font-size: 1rem; /* Base font size */
+    font-size: 1rem; 
 }
 
 /* Skip to Main Content */
@@ -91,25 +91,25 @@ main {
     justify-items: center;
 }
 .intro {
-    grid-column: 1 / -1; /* Span across the whole grid */
+    grid-column: 1 / -1; 
 }
 
-/* Ensure the image takes up full width and is on its own line */
+
 .intro img {
-    width: 100%; /* Full width */
-    height: auto; /* Maintain aspect ratio */
-    display: block; /* Make sure it's on its own line */
+    width: 100%; 
+    height: auto; 
+    display: block; 
 }
 
-/* Ensure the paragraph takes up full width */
+
 .intro p {
-    grid-column: 1 / -1; /* Span across the entire grid */
+    grid-column: 1 / -1; 
     font-size: 1rem;
     margin-top: 1rem;
 }
 
 main h2 {
-    font-size: 1.4rem; /* Scalable font size */
+    font-size: 1.4rem; 
     color: #00274c;
     margin-top: 1rem;
 }
@@ -122,13 +122,13 @@ main p {
 /* Grid Layout for Tablets and Desktops */
 @media (min-width: 768px) {
     main {
-        grid-template-columns: repeat(3, 1fr); /* Three columns on tablets */
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
 @media (min-width: 1024px) {
     main {
-        grid-template-columns: repeat(4, 1fr); /* Four columns on desktops */
+        grid-template-columns: repeat(4, 1fr); 
     }
 }
 
