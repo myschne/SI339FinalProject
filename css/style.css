@@ -1,0 +1,171 @@
+/* General Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #fafafa;
+    color: #222;
+    padding: 1rem;
+    margin: 0;
+    font-size: 1rem; /* Base font size */
+}
+
+/* Skip to Main Content */
+.skip-link {
+    position: absolute;
+    top: -40px; 
+    left: 10px;
+    background: #ffcc00; /* U-M Maize */
+    color: #00274C; /* U-M Blue */
+    padding: 0.5rem;
+    font-size: 1rem;
+    text-decoration: none;
+    z-index: 100;
+    border-radius: 5px;
+    transition: top 0.3s ease-in-out;
+    opacity: 0; 
+}
+
+.skip-link:focus {
+    top: 10px; 
+    opacity: 1; 
+}
+
+/* Header */
+header {
+    text-align: center;
+    background: #00274c;
+    padding: 1rem;
+    color: #fff;
+}
+
+header h1 {
+    font-size: 1.6rem;
+}
+
+/* Navigation */
+nav {
+    background: #ffcb05;
+    padding: 1rem;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0.5rem 0;
+}
+
+nav ul li a {
+    display: block;
+    padding: 0.75rem;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #00274c;
+    border-radius: 5px;
+}
+
+nav ul li a.active {
+    background-color: #ffcc00; 
+    font-weight: bold;
+    text-decoration: underline;
+    border: 3px solid #00274C; 
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+    background: #00274c;
+    color: #ffcb05;
+}
+
+/* Main Content - Mobile First Multi-Column Grid */
+main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+    justify-items: center;
+}
+.intro {
+    grid-column: 1 / -1; /* Span across the whole grid */
+}
+
+/* Ensure the image takes up full width and is on its own line */
+.intro img {
+    width: 100%; /* Full width */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Make sure it's on its own line */
+}
+
+/* Ensure the paragraph takes up full width */
+.intro p {
+    grid-column: 1 / -1; /* Span across the entire grid */
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+main h2 {
+    font-size: 1.4rem; /* Scalable font size */
+    color: #00274c;
+    margin-top: 1rem;
+}
+
+main p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Grid Layout for Tablets and Desktops */
+@media (min-width: 768px) {
+    main {
+        grid-template-columns: repeat(3, 1fr); /* Three columns on tablets */
+    }
+}
+
+@media (min-width: 1024px) {
+    main {
+        grid-template-columns: repeat(4, 1fr); /* Four columns on desktops */
+    }
+}
+
+/* Images - Fluid Sizing */
+img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Footer */
+footer {
+    background: #00274c;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+footer a {
+    color: #ffcb05;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Accessibility: Reduce Motion (for users who prefer reduced motion) */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    img[src$=".gif"] {
+        display: none;
+    }
+}
