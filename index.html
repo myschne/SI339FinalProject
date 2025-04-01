@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type = "text/css" href="css/reset.css">
     <link rel="stylesheet" type = "text/css" href="css/style.css">
+    <script src="script.js" defer></script>
     <title>Student Success Portal</title>
 </head>
 <body>
@@ -20,6 +21,7 @@
                 <li><a href = "CAPS.html">CAPS</a></li>
             </ul>
         </nav>
+        <button id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
         <h1>Student Success Portal</h1>
 
     </header>
@@ -100,7 +102,14 @@
         UMGPT. (2024). UMGPT (August 29th version) [Large language model]. -->
     </main>
     <footer>
-        <p><a href="https://sites.google.com/umich.edu/msiacademicadvising/student-support-resources">MSI Academic Advising </a></p>
-        </footer>
+        <p>&copy; <span id="currentYear"></span> University of Michigan. All rights reserved.</p>
+        <p><a href="https://sites.google.com/umich.edu/msiacademicadvising/student-support-resources">MSI Academic Advising</a></p>
+        <!-- Citation for dynamic year script (Used on all pages) -->
+        <!-- Source: CodexWorld - https://www.codexworld.com/how-to/get-current-year-to-display-dynamic-year-in-copyright-using-javascript/ -->
+    </footer>
+    
+    <script>
+        document.getElementById("currentYear").innerHTML = new Date().getFullYear();
+    </script>
 </body>
 </html>

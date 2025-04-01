@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type = "text/css" href="css/reset.css">
     <link rel="stylesheet" type = "text/css" href="css/style.css">
+    <script src="script.js" defer></script>
     <title>StudySpaces</title>
 </head>
 
@@ -20,6 +21,7 @@
             </ul>
         </nav>
         <h1>Study Spaces at UMSI</h1>
+        <button id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
         
 
     </header>
@@ -56,13 +58,18 @@
             
     </main>
     <footer>
-        <p>&copy; 2025 University of Michigan. All rights reserved.</p>
-        <p><a href="https://maps.studentlife.umich.edu/building">Building Map </a></p>
+        <p>&copy; <span id="currentYear"></span> University of Michigan. All rights reserved.</p>
+        <p><a href="https://maps.studentlife.umich.edu/building">Building Map</a></p>
         <p><a href="https://lib.umich.edu/">University Libraries</a></p>
         <p><a href="https://campusinvolvement.umich.edu/">Center for Campus Involvement</a></p>
         <p><a href="mailto:info@umich.edu">Contact Us</a></p>
         <p><a href="https://accessibility.umich.edu/">Accessibility Statement</a></p>
     </footer>
+    
+    <script>
+        document.getElementById("currentYear").innerHTML = new Date().getFullYear();
+    </script>
+    
     
 </body>
 

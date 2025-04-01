@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type = "text/css" href="css/reset.css">
     <link rel="stylesheet" type = "text/css" href="css/style.css">
+    <script src="script.js" defer></script>
     <title>StudentSuccess</title>
 </head>
 <body>
@@ -19,6 +20,7 @@
             </ul>
         </nav>
         <h1>Academic Suport at UMSI</h1>
+        <button id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
 
     </header>
     <main id="main-content">
@@ -61,13 +63,18 @@
             
     </main>
     <footer>
-        <p>&copy; 2025 University of Michigan. All rights reserved.</p>
+        <p>&copy; <span id="currentYear"></span> University of Michigan. All rights reserved.</p>
         <p><a href="https://www.si.umich.edu/">UMSI Homepage</a></p>
         <p><a href="https://sites.google.com/umich.edu/bsiacademicadvising?usp=sharing">BSI Academic Advising</a></p>
         <p><a href="https://sites.google.com/umich.edu/msiacademicadvising/student-support-resources">MSI Academic Advising</a></p>
         <p><a href="mailto:umsi.advising@umich.edu">Contact UMSI Advising</a></p>
         <p><a href="https://accessibility.umich.edu/">Accessibility Statement</a></p>
     </footer>
+    
+    <script>
+        document.getElementById("currentYear").innerHTML = new Date().getFullYear();
+    </script>
+    
     
 </body>
 

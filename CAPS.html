@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type = "text/css" href="css/reset.css">
     <link rel="stylesheet" type = "text/css" href="css/style.css">
+    <script src="script.js" defer></script>
     <title>CAPS</title>
 </head>
 <body>
@@ -19,6 +20,7 @@
             </ul>
         </nav>
         <h1>Counseling and Psychological Services</h1>
+        <button id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
 
     </header>
     <main id="main-content">
@@ -53,10 +55,18 @@
 
     </main>
     <footer>    
-        <p>&copy; 2025 University of Michigan. All rights reserved.</p>
+        <p>&copy; <span id="currentYear"></span> University of Michigan. All rights reserved.</p>
         <p><a href="https://caps.umich.edu/">Visit CAPS Website</a></p>
         <p><a href="mailto:caps@umich.edu">Contact CAPS</a></p>
-        <p><a href="https://accessibility.umich.edu/">Accessibility Statement</a></p></footer>
+        <p><a href="https://accessibility.umich.edu/">Accessibility Statement</a></p>
+        
+</footer>
+    </footer>
+    
+    <script>
+        document.getElementById("currentYear").innerHTML = new Date().getFullYear();
+    </script>
+    
     
 </body>
 
