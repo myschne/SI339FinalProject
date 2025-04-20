@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Class Schedule Builder</title>
+  <link rel="stylesheet" href="css/backpackstyle.css" />
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to Main Content</a>
+
+  <header>
+    <h1>Class Schedule Builder</h1>
+    <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="StudySpaces.html">Study Spaces</a></li>
+      <li><a href="StudentSuccess.html">Student Success</a></li>
+      <li><a href="CAPS.html">CAPS</a></li>
+      <li><a href="schedule.html" class="active">Schedule</a></li>
+    </ul>
+  </nav>
+
+  <main id="main-content">
+    <!-- Backpack Section -->
+    <section id="backpack">
+      <h2>Backpack Classes</h2>
+      <button id="add-class">Add Class</button>
+
+      <!-- Modal for Adding a Class -->
+      <div id="add-class-modal" style="display:none;">
+        <h3>Add a New Class</h3>
+        <form id="add-class-form">
+          <label for="class-name"><strong>Class Name:</strong></label>
+          <input type="text" id="class-name" name="class-name" required placeholder="e.g., SI 330" />
+
+          <div class="form-group days-group">
+            <label><strong>Days:</strong></label>
+            <div class="days-container">
+                <div class="day-item">
+                    <input type="checkbox" id="monday" name="days" value="Monday">
+                    <label for="monday">Monday</label>
+                </div>
+                <div class="day-item">
+                    <input type="checkbox" id="tuesday" name="days" value="Tuesday">
+                    <label for="tuesday">Tuesday</label>
+                </div>
+                <div class="day-item">
+                    <input type="checkbox" id="wednesday" name="days" value="Wednesday">
+                    <label for="wednesday">Wednesday</label>
+                </div>
+                <div class="day-item">
+                    <input type="checkbox" id="thursday" name="days" value="Thursday">
+                    <label for="thursday">Thursday</label>
+                </div>
+                <div class="day-item">
+                    <input type="checkbox" id="friday" name="days" value="Friday">
+                    <label for="friday">Friday</label>
+                </div>
+            </div>
+            
+          </div>
+
+          <label for="start-time"><strong>Start Time:</strong></label>
+          <input type="time" id="start-time" name="start-time" required />
+
+          <label for="end-time"><strong>End Time:</strong></label>
+          <input type="time" id="end-time" name="end-time" required />
+
+          <button type="submit">Add to Backpack</button>
+          <button type="button" id="close-modal">Close</button>
+          <p id="form-error" style="color: red; display: none; margin-top: 10px;"></p>
+        </form>
+      </div>
+
+      <ul id="backpack-list">
+        <li>
+          <strong>SI 330 - Monday & Wednesday</strong>, 13:00 - 14:30
+          <button class="add-to-schedule">Add to Schedule</button>
+        </li>
+        <li>
+          <strong>CS 101 - Tuesday & Thursday</strong>, 10:00 - 11:30
+          <button class="add-to-schedule">Add to Schedule</button>
+        </li>
+        <li>
+          <strong>SI 442 - Monday & Wednesday</strong>, 15:00 - 16:30
+          <button class="add-to-schedule">Add to Schedule</button>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Schedule Section -->
+    <section id="schedule">
+      <h2>Your Schedule</h2>
+      <ul id="schedule-list">
+        <!-- Added classes will appear here -->
+      </ul>
+    </section>
+
+    <!-- Calendar Section -->
+    <section id="calendar">
+      <h2>Weekly Calendar</h2>
+      <div class="calendar-column" id="monday-column">
+        <h3>Monday</h3>
+      </div>
+      <div class="calendar-column" id="tuesday-column">
+        <h3>Tuesday</h3>
+      </div>
+      <div class="calendar-column" id="wednesday-column">
+        <h3>Wednesday</h3>
+      </div>
+      <div class="calendar-column" id="thursday-column">
+        <h3>Thursday</h3>
+      </div>
+      <div class="calendar-column" id="friday-column">
+        <h3>Friday</h3>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="currentYear"></span> University of Michigan</p>
+  </footer>
+
+  <script src="backpackscript.js"></script>
+</body>
+</html>
