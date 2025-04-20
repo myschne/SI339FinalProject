@@ -28,20 +28,63 @@ document.addEventListener("DOMContentLoaded", function () {
         button.addEventListener("click", (event) => {
             const classItem = event.target.closest("li");
             const newClassItem = classItem.cloneNode(true);
+
             const scheduleButton = newClassItem.querySelector(".add-to-schedule");
             if (scheduleButton) scheduleButton.remove();
-            scheduleList.appendChild(newClassItem);
 
-            event.target.disabled = true;
-            event.target.textContent = "Added";
+            const deleteButton = newClassItem.querySelector(".delete-class");
+            if (deleteButton) deleteButton.remove();
+
+            const dropButton = document.createElement("button");
+            dropButton.textContent = "Drop";
+            dropButton.classList.add("drop-class");
 
             const classNameElement = classItem.querySelector("strong");
             if (!classNameElement) return;
 
-            const [className, daysString] = classNameElement.textContent.trim().split(" - ");
+            const [className, daysString] = classNameElement.textContent.trim().split(" - ", 2);
             const timeText = classItem.childNodes[2].textContent.trim();
             const [startTime, endTime] = timeText.replace(",", "").split(" - ").map(t => t.trim());
             const days = daysString.split(" & ").map(day => day.trim());
+
+            dropButton.addEventListener("click", () => {
+                newClassItem.remove();
+
+                // 🧽 Remove class block(s) from calendar
+                days.forEach(day => {
+                    const column = calendarColumns[day];
+                    if (!column) return;
+
+                    const blocks = column.querySelectorAll(".class-block");
+                    blocks.forEach(block => {
+                        if (
+                            block.dataset.startTime === startTime &&
+                            block.innerHTML.includes(className)
+                        ) {
+                            block.remove();
+                        }
+                    });
+                });
+
+                // 🔁 Re-enable the corresponding "Add to Schedule" button in backpack
+                const matchingBackpackItem = Array.from(backpackList.querySelectorAll("li")).find(item =>
+                    item.querySelector("strong")?.textContent.trim() === classNameElement.textContent.trim()
+                );
+
+                if (matchingBackpackItem) {
+                    const addButton = matchingBackpackItem.querySelector(".add-to-schedule");
+                    if (addButton) {
+                        addButton.disabled = false;
+                        addButton.textContent = "Add to Schedule";
+                    }
+                }
+            });
+
+            newClassItem.appendChild(dropButton);
+            scheduleList.appendChild(newClassItem);
+
+            event.target.disabled = true;
+            event.target.textContent = "Added";
 
             days.forEach((day) => {
                 if (!calendarColumns[day] || !className || !startTime || !endTime) return;
@@ -71,7 +114,21 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    document.querySelectorAll(".add-to-schedule").forEach(handleAddToSchedule);
+    // Bind all existing Add to Schedule buttons (and add Delete buttons if missing)
+    document.querySelectorAll(".add-to-schedule").forEach((button) => {
+        handleAddToSchedule(button);
+
+        const parent = button.closest("li");
+        if (parent && !parent.querySelector(".delete-class")) {
+            const deleteButton = document.createElement("button");
+            deleteButton.textContent = "Delete";
+            deleteButton.classList.add("delete-class");
+            deleteButton.addEventListener("click", () => {
+                parent.remove();
+            });
+            parent.appendChild(deleteButton);
+        }
+    });
 
     // 🎯 Modal logic
     const addClassButton = document.getElementById("add-class");
@@ -128,10 +185,17 @@ document.addEventListener("DOMContentLoaded", function () {
         newClassItem.innerHTML = `
             <strong>${className} - ${selectedDays}</strong>, ${startTime} - ${endTime}
             <button class="add-to-schedule">Add to Schedule</button>
+            <button class="delete-class">Delete</button>
         `;
 
-        const button = newClassItem.querySelector(".add-to-schedule");
-        handleAddToSchedule(button);
+        // Hook up both buttons
+        const addButton = newClassItem.querySelector(".add-to-schedule");
+        const deleteButton = newClassItem.querySelector(".delete-class");
+
+        handleAddToSchedule(addButton);
+        deleteButton.addEventListener("click", () => {
+            newClassItem.remove();
+        });
 
         backpackList.appendChild(newClassItem);
         addClassModal.style.display = "none";
