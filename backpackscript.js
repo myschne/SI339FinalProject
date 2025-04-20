@@ -48,6 +48,9 @@ document.addEventListener("DOMContentLoaded", function () {
             const days = daysString.split(" & ").map(day => day.trim());
 
             dropButton.addEventListener("click", () => {
+                const confirmDrop = confirm("Are you sure you want to drop this class?");
+                if (!confirmDrop) return;
+            
                 newClassItem.remove();
 
                 // 🧽 Remove class block(s) from calendar
