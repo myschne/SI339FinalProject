@@ -1,12 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // 🌙 Theme toggle
+    //Theme toggle
     const themeToggleButton = document.getElementById("theme-toggle");
     themeToggleButton.addEventListener("click", () => {
         document.body.classList.toggle("dark-mode");
         themeToggleButton.textContent = document.body.classList.contains("dark-mode") ? "🌞" : "🌙";
     });
 
-    // 📅 Calendar columns
+    // Calendar columns
     const calendarColumns = {
         Monday: document.getElementById("monday-column"),
         Tuesday: document.getElementById("tuesday-column"),
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
             
                 newClassItem.remove();
 
-                // 🧽 Remove class block(s) from calendar
+                // Remove class block(s) from calendar
                 days.forEach(day => {
                     const column = calendarColumns[day];
                     if (!column) return;
@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     });
                 });
 
-                // 🔁 Re-enable the corresponding "Add to Schedule" button in backpack
+                // Re-enable the corresponding "Add to Schedule" button in backpack
                 const matchingBackpackItem = Array.from(backpackList.querySelectorAll("li")).find(item =>
                     item.querySelector("strong")?.textContent.trim() === classNameElement.textContent.trim()
                 );
@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // 🎯 Modal logic
+    //Modal logic
     const addClassButton = document.getElementById("add-class");
     const addClassModal = document.getElementById("add-class-modal");
     const closeModalButton = document.getElementById("close-modal");
@@ -205,6 +205,6 @@ document.addEventListener("DOMContentLoaded", function () {
         addClassForm.reset();
     });
 
-    // 🗓️ Update footer year
+    // Update footer year
     document.getElementById("currentYear").textContent = new Date().getFullYear();
 });

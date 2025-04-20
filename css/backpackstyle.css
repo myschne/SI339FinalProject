@@ -1,53 +1,53 @@
 /* Skip to Main Content */
 .skip-link {
-    background: #ffcc00; /* U-M Maize */
-    color: #00274C; /* U-M Blue */
+    background: #ffcc00; 
+    color: #00274C; 
     font-size: 1.1rem;
     font-weight: bold;
     text-transform: uppercase;
     padding: 12px 24px;
-    border-radius: 50px; /* Rounded corners */
+    border-radius: 50px; 
     display: inline-block;
     text-align: center;
     transition: all 0.3s ease-in-out;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for a raised effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
     text-decoration: none;
 }
 
 .skip-link:hover,
 .skip-link:focus {
-    background: #00274c; /* U-M Blue */
-    color: #ffcb05; /* U-M Yellow */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Darker shadow on hover/focus */
-    transform: translateY(-2px); /* Slightly lift the button on hover */
+    background: #00274c; 
+    color: #ffcb05;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); 
+    transform: translateY(-2px);
 }
 
 .skip-link:active {
-    background: #001324; /* Darker U-M Blue */
-    color: #ffcb05; /* U-M Yellow */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Softer shadow when clicked */
-    transform: translateY(0); /* Button returns to normal position */
+    background: #001324;
+    color: #ffcb05;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+    transform: translateY(0);
 }
 
 .skip-link:focus {
-    outline: none; /* Remove default focus outline */
-    border: 2px solid #ffcb05; /* Add a custom focus outline */
+    outline: none; 
+    border: 2px solid #ffcb05;
 }
 
 /* Dark Mode Styles for Skip to Main Content Button */
 body.dark-mode .skip-link {
-    background: #00274c; /* U-M Blue for dark mode */
-    color: #ffcb05; /* U-M Yellow for dark mode */
+    background: #00274c;
+    color: #ffcb05; 
 }
 
 body.dark-mode .skip-link:hover,
 body.dark-mode .skip-link:focus {
-    background: #ffcb05; /* U-M Yellow for hover/focus */
-    color: #00274c; /* U-M Blue */
+    background: #ffcb05; 
+    color: #00274c; 
 }
 
 body.dark-mode .skip-link:active {
-    background: #001324; /* Darker U-M Blue */
+    background: #001324;
 }
 
 /* General Body Styles */
@@ -74,22 +74,22 @@ body.dark-mode h3,
 body.dark-mode h4,
 body.dark-mode h5,
 body.dark-mode h6 {
-    color: #ffcb05;  /* U-M Yellow for dark mode */
+    color: #ffcb05; 
 }
 
 /* Default styles (Light mode) */
 h2, h3, h4, h5, h6 {
-    color: #00274C;  /* U-M Blue for light mode */
+    color: #00274C; 
 }
 
 /* Dark mode link styles */
 main a {
-    color: #00274c;  /* U-M Blue for links in light mode */
+    color: #00274c;
 }
 
 main a:hover,
 main a:focus {
-    color: #ffcb05;  /* U-M Yellow for hover/focus in light mode */
+    color: #ffcb05;
 }
 
 main a:visited {
@@ -98,22 +98,22 @@ main a:visited {
 
 /* Dark mode styles for links*/
 body.dark-mode main a {
-    color: #ffcb05;  /* U-M Yellow for unvisited links in dark mode */
+    color: #ffcb05; 
 }
 
 body.dark-mode main a:hover,
 body.dark-mode main a:focus {
-    color: #00274C;  /* U-M Blue on hover/focus in dark mode */
+    color: #00274C; 
 }
 
 body.dark-mode main a:visited {
-    color: #d5b01c;  /* A lighter yellow for visited links */
+    color: #d5b01c;
 }
 
 /* Skip to Main Content */
 .skip-link {
-    background: #ffcc00; /* U-M Maize */
-    color: #00274C; /* U-M Blue */
+    background: #ffcc00;
+    color: #00274C;
 }
 
 /* Header */
@@ -130,7 +130,7 @@ header h1 {
 
 /* Navigation */
 nav {
-    background: #ffcb05; /* U-M Maize for light mode */
+    background: #ffcb05;
     padding: 1rem;
     text-align: center;
 }
@@ -185,7 +185,7 @@ body.dark-mode nav ul li a:focus {
 /* Main Content - Mobile First Multi-Column Grid */
 main {
     display: grid;
-    grid-template-columns: 1fr; /* Mobile = 1 column */
+    grid-template-columns: 1fr;
     gap: 1rem;
     padding: 1rem;
     justify-items: start;
@@ -233,12 +233,12 @@ main p {
     display: flex;
     justify-content: space-between;
     font-weight: bold;
-    color: #00274C; /* U-M Blue for light mode */
+    color: #00274C;
 }
 
 /* Dark mode calendar header */
 body.dark-mode .calendar-header {
-    color: #ffcb05; /* U-M Yellow for dark mode */
+    color: #ffcb05;
 }
 
 .calendar-body {
@@ -261,8 +261,8 @@ body.dark-mode .calendar-header {
 /* Default calendar column event block styles (light mode) */
 .calendar-column div {
     height: 40px;
-    background-color: #ffcb05; /* Light background for event blocks */
-    color: #00274C; /* U-M Blue text for event blocks */
+    background-color: #ffcb05;
+    color: #00274C; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -272,41 +272,41 @@ body.dark-mode .calendar-header {
 
 /* Dark mode calendar column event block styles */
 body.dark-mode .calendar-column div {
-    background-color: #00274C; /* Dark background for event blocks */
-    color: #ffcb05; /* U-M Yellow text for event blocks */
+    background-color: #00274C; 
+    color: #ffcb05; 
 }
 
 .class-block {
-    background-color: #87cefa; /* Light blue for event blocks in light mode */
+    background-color: #87cefa; 
     border-radius: 3px;
     padding: 5px;
     text-align: center;
-    color: #00274C; /* U-M Blue text color */
+    color: #00274C;
 }
 
 /* Dark mode styles for class blocks */
 body.dark-mode .class-block {
-    background-color: #00274C; /* Darker background for class blocks */
-    color: #ffcb05; /* U-M Yellow text for class blocks in dark mode */
+    background-color: #00274C; 
+    color: #ffcb05; 
 }
 
 /* Hover effect for class blocks in both light and dark mode */
 .class-block:hover {
-    background-color: #ffcb05; /* U-M Yellow for hover */
-    color: #00274C; /* U-M Blue text color for hover */
+    background-color: #ffcb05; 
+    color: #00274C; 
     cursor: pointer;
 }
 
 /* Dark mode hover effect for class blocks */
 body.dark-mode .class-block:hover {
-    background-color: #00274C; /* U-M Blue for hover */
-    color: #ffcb05; /* U-M Yellow text color for hover */
+    background-color: #00274C; 
+    color: #ffcb05; 
 }
 
 /* Button Styles */
 button {
-    background-color: #ffcb05;  /* U-M Yellow */
-    color: #00274c; /* U-M Blue for text */
+    background-color: #ffcb05; 
+    color: #00274c;
     border: none;
     border-radius: 8px;
     padding: 10px 20px;
@@ -321,80 +321,80 @@ button {
 
 button:hover,
 button:focus {
-    background-color: #00274c;  /* U-M Blue */
-    color: #ffcb05;  /* U-M Yellow */
+    background-color: #00274c; 
+    color: #ffcb05;  
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     transform: translateY(-2px);
 }
 
 button:active {
-    background-color: #001324; /* Slightly darker U-M Blue for active state */
+    background-color: #001324;
     transform: translateY(0);
     box-shadow: none;
 }
 
 button:disabled {
-    background-color: #ccc;  /* Light gray when disabled */
-    color: #666; /* Darker gray text */
+    background-color: #ccc; 
+    color: #666; 
     cursor: not-allowed;
     box-shadow: none;
 }
 
 /* Dark Mode Button Styles */
 body.dark-mode button {
-    background-color: #00274c; /* U-M Blue */
-    color: #ffcb05; /* U-M Yellow for text */
+    background-color: #00274c;
+    color: #ffcb05; 
 }
 
 body.dark-mode button:hover,
 body.dark-mode button:focus {
-    background-color: #ffcb05; /* U-M Yellow for hover/focus */
-    color: #00274c;  /* U-M Blue text */
+    background-color: #ffcb05; 
+    color: #00274c; 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     transform: translateY(-2px);
 }
 
 body.dark-mode button:active {
-    background-color: #001324; /* Darker U-M Blue */
-    color: #ffcb05; /* U-M Yellow text */
+    background-color: #001324;
+    color: #ffcb05; 
     transform: translateY(0);
     box-shadow: none;
 }
 
 body.dark-mode button:disabled {
-    background-color: #444; /* Darker gray for disabled button */
-    color: #666; /* Light gray text */
+    background-color: #444; 
+    color: #666;
 }
 
 /* Additional Button Variants */
 
 /* Secondary Button */
 button.secondary {
-    background-color: #00274c; /* U-M Blue */
-    color: #ffcb05; /* U-M Yellow for text */
+    background-color: #00274c;
+    color: #ffcb05;
     border-radius: 8px;
     padding: 8px 16px;
     font-size: 1rem;
     text-transform: uppercase;
-    border: 2px solid #ffcb05; /* U-M Yellow border */
+    border: 2px solid #ffcb05;
 }
 
 button.secondary:hover,
 button.secondary:focus {
-    background-color: #ffcb05; /* U-M Yellow */
-    color: #00274c; /* U-M Blue */
+    background-color: #ffcb05;
+    color: #00274c; 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     transform: translateY(-2px);
 }
 
 button.secondary:active {
-    background-color: #d5a800; /* Slightly darker yellow for active state */
+    background-color: #d5a800;
     transform: translateY(0);
     box-shadow: none;
 }
 
 button.secondary:disabled {
-    background-color: #ccc; /* Disabled state */
+    background-color: #ccc;
     color: #666;
     cursor: not-allowed;
 }
@@ -402,8 +402,8 @@ button.secondary:disabled {
 /* Tertiary Button (Outline Style) */
 button.tertiary {
     background-color: transparent;
-    color: #00274c; /* U-M Blue for text */
-    border: 2px solid #00274c; /* U-M Blue border */
+    color: #00274c;
+    border: 2px solid #00274c;
     padding: 8px 16px;
     font-size: 1rem;
     font-weight: bold;
@@ -413,21 +413,21 @@ button.tertiary {
 
 button.tertiary:hover,
 button.tertiary:focus {
-    background-color: #00274c; /* U-M Blue */
-    color: #ffcb05; /* U-M Yellow */
+    background-color: #00274c; 
+    color: #ffcb05; 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     transform: translateY(-2px);
 }
 
 button.tertiary:active {
-    background-color: #001324; /* Darker U-M Blue */
-    color: #ffcb05; /* U-M Yellow */
+    background-color: #001324;
+    color: #ffcb05;
     transform: translateY(0);
     box-shadow: none;
 }
 
 button.tertiary:disabled {
-    background-color: #ccc; /* Disabled state */
+    background-color: #ccc;
     color: #666;
     cursor: not-allowed;
 }
